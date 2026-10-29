@@ -113,6 +113,19 @@ public class test {
         assertEquals("Suite", CombinaisonCartes.determinerCombinaison(mainJoueur));
     }
 
+    @Test 
+    public void testCombinaisonQuinteFlush(){
+        ArrayList<Carte> main = new ArrayList<>();
+        main.add(new Carte("Coeur", 10));
+        main.add(new Carte("Coeur", 11));
+        main.add(new Carte("Coeur", 12));
+        main.add(new Carte("Coeur", 13));
+        main.add(new Carte("Coeur", 14));
+
+        MainJoueur mainJoueur = new MainJoueur(main);
+        assertEquals("Quinte Flush", CombinaisonCartes.determinerCombinaison(mainJoueur));
+    }
+
 
 
 }
