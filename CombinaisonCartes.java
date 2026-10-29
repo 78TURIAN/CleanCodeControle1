@@ -21,6 +21,11 @@ public class CombinaisonCartes {
                 throw new IllegalArgumentException("La couleur de la carte doit être Coeur, Carreau, Trèfle ou Pique.");
             }
 
+            
+            if(checkQuinteFlush(mainJoueur)) {
+                return "Quinte Flush";
+            }
+
             if(checkCarre(mainJoueur)) {
                 return "Carré";
             }  
@@ -122,6 +127,10 @@ public class CombinaisonCartes {
             }
         }
         return true;
+    }
+
+    public static Boolean checkQuinteFlush(MainJoueur mainJoueur) {
+        return checkSuite(mainJoueur) && checkCouleur(mainJoueur);
     }
 
 }
