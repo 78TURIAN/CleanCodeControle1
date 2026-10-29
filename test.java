@@ -77,6 +77,29 @@ public class test {
         assertEquals("combinaison non reconnue", CombinaisonCartes.determinerCombinaison(mainJoueur2));
     }
 
+    @Test 
+    public void testCombinaisonCouleur(){
+        ArrayList<Carte> main = new ArrayList<>();
+        main.add(new Carte("Coeur", 10));
+        main.add(new Carte("Coeur", 5));
+        main.add(new Carte("Coeur", 7));
+        main.add(new Carte("Coeur", 2));
+        main.add(new Carte("Coeur", 14));
+
+        ArrayList<Carte> main2 = new ArrayList<>();
+        main2.add(new Carte("Carreau", 10));
+        main2.add(new Carte("Coeur", 5));
+        main2.add(new Carte("Coeur", 7));
+        main2.add(new Carte("Coeur", 2));
+        main2.add(new Carte("Coeur", 14));
+
+        MainJoueur mainJoueur = new MainJoueur(main);
+        assertEquals("Couleur", CombinaisonCartes.determinerCombinaison(mainJoueur));
+
+        MainJoueur mainJoueur2 = new MainJoueur(main2);
+        assertEquals("combinaison non reconnue", CombinaisonCartes.determinerCombinaison(mainJoueur2));
+    }
+
 
 
 }

@@ -10,9 +10,7 @@ public class CombinaisonCartes {
     private final int QUINTE_FLUSH = 80;
 
     public static String determinerCombinaison(MainJoueur mainJoueur) {
-        ArrayList<Carte> main = mainJoueur.getMain();
-
-        
+        ArrayList<Carte> main = mainJoueur.getMain();        
         
         for (Carte carte : main) {
             if (carte.getValeur() < 2 || carte.getValeur() > 14) {
@@ -33,13 +31,8 @@ public class CombinaisonCartes {
 
             if(checkCarre(mainJoueur)) {
                 return "Carré";
-            }
-
-            
-
+            }         
         }
-
-
         return "combinaison non reconnue";
     }
 
