@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.ArrayList;
 
 public class test {
 
@@ -8,6 +9,19 @@ public class test {
         Carte carte = new Carte("Coeur", 10);
         assertEquals("Coeur", carte.getCouleur());
         assertEquals(10, carte.getValeur());
+    }
+
+    @Test
+    public void testClasseMainJoueur() {
+        ArrayList<Carte> main = new ArrayList<>();
+        main.add(new Carte("Coeur", 10));
+        main.add(new Carte("Carreau", 5));
+        main.add(new Carte("Trèfle", 7));
+        main.add(new Carte("Pique", 2));
+        main.add(new Carte("Coeur", 14));
+
+        MainJoueur mainJoueur = new MainJoueur(main);
+        assertEquals(main, mainJoueur.getMain());
     }
 
 
