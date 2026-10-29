@@ -55,6 +55,18 @@ public class test {
         assertEquals("Carré", CombinaisonCartes.determinerCombinaison(mainJoueur));
     }
 
+    @Test void testCombinaisonCartesFull(){
+        ArrayList<Carte> main = new ArrayList<>();
+        main.add(new Carte("Coeur", 10));
+        main.add(new Carte("Carreau", 10));
+        main.add(new Carte("Trèfle", 10));
+        main.add(new Carte("Pique", 2));
+        main.add(new Carte("Coeur", 2));
+
+        MainJoueur mainJoueur = new MainJoueur(main);
+        assertEquals("Combinaison à implémenter", CombinaisonCartes.determinerCombinaison(mainJoueur));
+    }
+
 
 
 }
