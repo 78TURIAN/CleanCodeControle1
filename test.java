@@ -100,6 +100,19 @@ public class test {
         assertEquals("combinaison non reconnue", CombinaisonCartes.determinerCombinaison(mainJoueur2));
     }
 
+    @Test 
+    public void testCombinaisonSuite(){
+        ArrayList<Carte> main = new ArrayList<>();
+        main.add(new Carte("Coeur", 10));
+        main.add(new Carte("Carreau", 11));
+        main.add(new Carte("Trèfle", 12));
+        main.add(new Carte("Pique", 13));
+        main.add(new Carte("Coeur", 14));
+
+        MainJoueur mainJoueur = new MainJoueur(main);
+        assertEquals("combinaison non reconnue", CombinaisonCartes.determinerCombinaison(mainJoueur));
+    }
+
 
 
 }
