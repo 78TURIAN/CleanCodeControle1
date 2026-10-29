@@ -21,17 +21,21 @@ public class CombinaisonCartes {
                 throw new IllegalArgumentException("La couleur de la carte doit être Coeur, Carreau, Trèfle ou Pique.");
             }
 
+            if(checkCarre(mainJoueur)) {
+                return "Carré";
+            }  
+
             if(checkFull(mainJoueur)) {
                 return "Full";
             }
             
+            if(checkCouleur(mainJoueur)) {
+                return "Couleur";
+            }              
+            
             if(checkBrelan(mainJoueur)) {
                 return "Brelan";
             }
-
-            if(checkCarre(mainJoueur)) {
-                return "Carré";
-            }         
         }
         return "combinaison non reconnue";
     }
@@ -90,6 +94,16 @@ public class CombinaisonCartes {
         }
 
         return brelan && paire;
+    }
+
+    public static Boolean checkCouleur(MainJoueur mainJoueur) {
+        String couleur = mainJoueur.getMain().get(0).getCouleur();
+        for (Carte carte : mainJoueur.getMain()) {
+            if (!carte.getCouleur().equals(couleur)) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }
