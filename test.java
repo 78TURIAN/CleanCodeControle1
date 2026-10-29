@@ -57,14 +57,24 @@ public class test {
 
     @Test void testCombinaisonCartesFull(){
         ArrayList<Carte> main = new ArrayList<>();
+        ArrayList<Carte> main2 = new ArrayList<>();
         main.add(new Carte("Coeur", 10));
         main.add(new Carte("Carreau", 10));
         main.add(new Carte("Trèfle", 10));
         main.add(new Carte("Pique", 2));
         main.add(new Carte("Coeur", 2));
 
+        main2.add(new Carte("Coeur", 2));
+        main2.add(new Carte("Carreau", 5));
+        main2.add(new Carte("Trèfle", 7));
+        main2.add(new Carte("Pique", 9));
+        main2.add(new Carte("Coeur", 6));
+
         MainJoueur mainJoueur = new MainJoueur(main);
-        assertEquals("Combinaison à implémenter", CombinaisonCartes.determinerCombinaison(mainJoueur));
+        assertEquals("Full", CombinaisonCartes.determinerCombinaison(mainJoueur));
+
+        MainJoueur mainJoueur2 = new MainJoueur(main2);
+        assertEquals("combinaison non reconnue", CombinaisonCartes.determinerCombinaison(mainJoueur2));
     }
 
 
