@@ -32,6 +32,10 @@ public class CombinaisonCartes {
             if(checkCouleur(mainJoueur)) {
                 return "Couleur";
             }              
+
+            if(checkSuite(mainJoueur)) {
+                return "Suite";
+            }
             
             if(checkBrelan(mainJoueur)) {
                 return "Brelan";
@@ -100,6 +104,20 @@ public class CombinaisonCartes {
         String couleur = mainJoueur.getMain().get(0).getCouleur();
         for (Carte carte : mainJoueur.getMain()) {
             if (!carte.getCouleur().equals(couleur)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static Boolean checkSuite(MainJoueur mainJoueur) {
+        ArrayList<Integer> valeurs = new ArrayList<>();
+        for (Carte carte : mainJoueur.getMain()) {
+            valeurs.add(carte.getValeur());
+        }
+        valeurs.sort(Integer::compareTo);
+        for (int i = 0; i < valeurs.size() - 1; i++) {
+            if (valeurs.get(i) + 1 != valeurs.get(i + 1)) {
                 return false;
             }
         }

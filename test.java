@@ -110,7 +110,7 @@ public class test {
         main.add(new Carte("Coeur", 14));
 
         MainJoueur mainJoueur = new MainJoueur(main);
-        assertEquals("combinaison non reconnue", CombinaisonCartes.determinerCombinaison(mainJoueur));
+        assertEquals("Suite", CombinaisonCartes.determinerCombinaison(mainJoueur));
     }
 
 
