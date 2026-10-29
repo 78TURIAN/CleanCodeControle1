@@ -40,6 +40,21 @@ public class test {
         assertEquals("Brelan", CombinaisonCartes.determinerCombinaison(mainJoueur));
     }
 
+    @Test
+    public void testCombinaisonCartesCarre() {
+        // Test pour la classe CombinaisonCartes
+        ArrayList<Carte> main = new ArrayList<>();
+        main.add(new Carte("Coeur", 10));
+        main.add(new Carte("Carreau", 10));
+        main.add(new Carte("Trèfle", 10));
+        main.add(new Carte("Pique", 10));
+        main.add(new Carte("Coeur", 14));
+
+        MainJoueur mainJoueur = new MainJoueur(main);
+        assertTrue(CombinaisonCartes.checkCarre(mainJoueur));
+        assertEquals("Carré", CombinaisonCartes.determinerCombinaison(mainJoueur));
+    }
+
 
 
 }

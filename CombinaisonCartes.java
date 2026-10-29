@@ -27,6 +27,10 @@ public class CombinaisonCartes {
                 return "Brelan";
             }
 
+            if(checkCarre(mainJoueur)) {
+                return "Carré";
+            }
+
         }
 
 
@@ -44,6 +48,23 @@ public class CombinaisonCartes {
                 }
             }
             if (compte == 3) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static Boolean checkCarre(MainJoueur mainJoueur) {
+        for (Carte carte : mainJoueur.getMain()) {
+            int valeur = carte.getValeur();
+            int compte = 0;
+            for (Carte c : mainJoueur.getMain()) {
+                if (c.getValeur() == valeur) {
+                    compte++;
+                }
+            }
+            if (compte == 4) {
                 return true;
             }
         }
